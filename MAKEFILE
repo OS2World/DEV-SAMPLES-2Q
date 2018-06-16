@@ -1,0 +1,17 @@
+# MS C 6.00a makefile
+
+CFLAGS=/AS /Oxaz /W4 /G2rs /Lp
+
+all: 2q.exe
+
+
+2q.obj: 2q.c 2q.h
+    cl $(CFLAGS) /c 2q.c
+
+2q.res: 2q.rc 2q.h
+    rc -r 2q.rc
+
+2q.exe:  2q.obj 2q.res
+    cl $(CFLAGS) 2q.obj /link /a:16
+    rc 2q.res 2q.exe
+

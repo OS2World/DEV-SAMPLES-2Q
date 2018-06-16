@@ -1,0 +1,17 @@
+# MS C 5.10 or IBM C/2 1.10 makefile
+
+CFLAGS=/AS /Ox /W3 /G2s /Lp
+
+#all: 2q.exe            # use this with IBM C/2 1.10
+
+
+2q.obj: 2q.c 2q.h
+    cl $(CFLAGS) /c 2q.c
+
+2q.res: 2q.rc 2q.h
+    rc -r 2q.rc
+
+2q.exe:  2q.obj 2q.res
+    cl $(CFLAGS) 2q.obj os2.lib /link /a:16
+    rc 2q.res 2q.exe
+

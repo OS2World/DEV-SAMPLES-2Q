@@ -1,0 +1,12 @@
+
+
+#include "2q.h"
+
+MENU ID_MAIN   PRELOAD
+BEGIN
+    SUBMENU    "~File", 0
+    BEGIN
+        MENUITEM     "~Open...",        IDM_OPEN
+        MENUITEM     "~Clear",          IDM_CLEAR
+    END
+END
